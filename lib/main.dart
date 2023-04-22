@@ -1,21 +1,18 @@
 import 'package:flutter/material.dart';
-import 'ageWidget.dart';
-import 'calculate.dart';
-import 'heightweight.dart';
-import 'widgets.dart';
-import 'components.dart';
-import 'var_cons.dart';
+import 'Widgets/ageWidget.dart';
+import 'Widgets/calculate.dart';
+import 'Widgets/heightweight.dart';
+import 'compenents/components.dart';
+import 'compenents/var_cons.dart';
 
 void main() => runApp(MaterialApp(home: Home()));
-
 
 class Home extends StatefulWidget {
   @override
   State<Home> createState() => _HomeState();
 }
+
 class _HomeState extends State<Home> {
-
-
   ////////////////////////////////////////////////////////////////////////////////
   void increaseWeight() => setState(() => weight++);
   void decreaseWeight() => setState(() => weight--);
@@ -23,36 +20,34 @@ class _HomeState extends State<Home> {
   void decreaseHeight() => setState(() => height--);
   ////////////////////////////////////////////////////////////////////////////////
 
-
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const PreferredSize(
+      appBar: PreferredSize(
         preferredSize: Size.fromHeight(60),
         child: CustomAppBar(),
       ),
       body: Padding(
-        padding: const EdgeInsets.all(10.0),
-        child: Column(children: <Widget> [
+        padding: const EdgeInsets.all(8.0),
+        child: Column(children: <Widget>[
           Expanded(
             flex: 3,
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: const <Widget>[
-                Male_Female(gender: 'Male'),
-                SizedBox(width: 10),
-                Male_Female(gender: 'Female')
+              children: <Widget>[
+                MaleFemale('Male'),
+                const SizedBox(width: 8),
+                MaleFemale('Female'),
               ],
             ),
           ),
-          const SizedBox(height: 10),
+          const SizedBox(height: 8),
           const AgeWidget(),
-          const SizedBox(height: 10),
+          const SizedBox(height: 8),
           Expanded(
             flex: 3,
             child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              //mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 HeightWeight(
                     heightWeight: 'Weight',
@@ -72,9 +67,40 @@ class _HomeState extends State<Home> {
               ],
             ),
           ),
-          const SizedBox(height: 10),
+          const SizedBox(height: 5),
           const Calculate(),
         ]),
+      ),
+    );
+  }
+
+  // ignore: non_constant_identifier_names
+  Expanded MaleFemale(String gender) {
+    return Expanded(
+      child: GestureDetector(
+        onTap: () {
+          setState(() {
+            isMale = gender == 'Male' ? true : false;
+          });
+        },
+        child: Container(
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(20),
+              color: isMale && gender == 'Male' || !isMale && gender == 'Female'
+                  ? Colors.green[800]
+                  : Colors.green[300],
+            ),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Icon(
+                  gender == 'Male' ? Icons.male : Icons.female,
+                  size: 70,
+                  color: Colors.white,
+                ),
+                Text(gender == 'Male' ? 'Male' : 'Female', style: style1)
+              ],
+            )),
       ),
     );
   }

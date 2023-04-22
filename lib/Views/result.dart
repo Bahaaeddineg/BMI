@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'var_cons.dart';
+import '../compenents/components.dart';
+import '../compenents/var_cons.dart';
 
 // ignore: must_be_immutable
 class Result extends StatefulWidget {
   final double result;
-  final int age;
-  final String name;
+  final double age;
   String resultString = '';
   String get resultPhrase {
     if (result >= 40)
@@ -25,7 +25,7 @@ class Result extends StatefulWidget {
 
   Result({super.key, 
     required this.age,
-    required this.name,
+    
     required this.result,
   });
 
@@ -37,43 +37,35 @@ class _ResultState extends State<Result> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(10.0),
-        ),
-        centerTitle: true,
-        backgroundColor: Color.fromARGB(255, 29, 190, 112),
-        title: Text(
-          'BMI',
-          style: style1,
-        ),
-      ),
+      appBar: PreferredSize(child: CustomAppBar(), preferredSize: Size.fromHeight(60)),
       body: Column(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
         Center(
           child: Text(
-            'Your name: ${widget.name}',
+            'Your gender: ${isMale? 'Male':'Female'}',
+            style: style1,
+            textAlign: TextAlign.center,
+          ),
+        ),
+       
+        Center(
+          child: Text(
+            'Your age: ${age.toInt()}',
             style: style1,
             textAlign: TextAlign.center,
           ),
         ),
         Center(
           child: Text(
-            'Your age: ${widget.age}',
+            'Result: ${height==0 || weight==0  ? '0':widget.result.toStringAsFixed(1)}',
             style: style1,
             textAlign: TextAlign.center,
           ),
         ),
         Center(
           child: Text(
-            'Result: ${widget.result.toStringAsFixed(1)}',
+            'Healthiness: ${height==0 || weight==0 ? 'Undermined':widget.resultPhrase}',
             style: style1,
             textAlign: TextAlign.center,
-          ),
-        ),
-        Center(
-          child: Text(
-            'Healthiness: ${widget.resultPhrase}',
-            style: style1,
           ),
         ),
       ]),

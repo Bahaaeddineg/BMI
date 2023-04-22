@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'result.dart';
-import 'var_cons.dart';
-
+import '../Views/result.dart';
+import '../compenents/var_cons.dart';
 class Calculate extends StatelessWidget {
   const Calculate({super.key});
 
@@ -11,13 +10,12 @@ class Calculate extends StatelessWidget {
         flex: 1,
         child: GestureDetector(
           onTap: () {
-            calculate = weight / (height * height);
+            calculate = weight / (height * height*0.0001);
             Navigator.push(
               context,
               MaterialPageRoute(
                   builder: (context) => Result(
-                        age: 20,
-                        name: 'gueroumi',
+                        age:age,
                         result: calculate,
                       )),
             );
