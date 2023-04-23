@@ -33,19 +33,15 @@ class _HeightWeightState extends State<HeightWeight> {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
-              
               Text(
                   widget.heightWeight,
                   style: style1,
-                
               ),
               SizedBox(height: 10,),
-              Row(
-                             
+              Row(          
                     crossAxisAlignment: CrossAxisAlignment.center,
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                     
                       Text(
                         '${widget.heightWeight == 'Weight' ? weight : height}',
                         style: style2,
@@ -57,8 +53,6 @@ class _HeightWeightState extends State<HeightWeight> {
                       ),
                     ],
                   ),
-                
-              
               Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
@@ -90,7 +84,6 @@ class _HeightWeightState extends State<HeightWeight> {
                         ))
                   ],
                 ),
-              
             ],
           )),
     );

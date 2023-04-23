@@ -46,7 +46,6 @@ class _ResultState extends State<Result> {
             textAlign: TextAlign.center,
           ),
         ),
-       
         Center(
           child: Text(
             'Your age: ${age.toInt()}',

@@ -48,7 +48,6 @@ class _HomeState extends State<Home> {
           Expanded(
             flex: 3,
             child: Row(
-             
               children: [
                 HeightWeight(
                     heightWeight: 'Weight',
