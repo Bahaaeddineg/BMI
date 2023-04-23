@@ -30,17 +30,17 @@ class _HeightWeightState extends State<HeightWeight> {
             color: Colors.green[300],
           ),
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
-              Expanded(
-                child: Text(
+              
+              Text(
                   widget.heightWeight,
                   style: style1,
-                ),
+                
               ),
-              Expanded(
-                child: Flexible(
-                  child: Row(
+              SizedBox(height: 10,),
+              Row(
                              
                     crossAxisAlignment: CrossAxisAlignment.center,
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -50,17 +50,16 @@ class _HeightWeightState extends State<HeightWeight> {
                         '${widget.heightWeight == 'Weight' ? weight : height}',
                         style: style2,
                       ),
-                      SizedBox(width: 5,),
+                      const SizedBox(width: 5,),
                        Text(
-                        '${widget.heightWeight=='Height'? 'Cm':'Kg'}',
-                        style: style1,
+                        widget.heightWeight=='Height'? 'Cm':'Kg',
+                        style: style4,
                       ),
                     ],
                   ),
-                ),
-              ),
-              Expanded(
-                child: Row(
+                
+              
+              Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
                     FloatingActionButton(
@@ -91,7 +90,7 @@ class _HeightWeightState extends State<HeightWeight> {
                         ))
                   ],
                 ),
-              )
+              
             ],
           )),
     );

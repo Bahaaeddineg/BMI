@@ -13,6 +13,7 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
+  
   ////////////////////////////////////////////////////////////////////////////////
   void increaseWeight() => setState(() => weight++);
   void decreaseWeight() => setState(() => weight--);
@@ -24,7 +25,7 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: PreferredSize(
-        preferredSize: Size.fromHeight(60),
+        preferredSize: const Size.fromHeight(60),
         child: CustomAppBar(),
       ),
       body: Padding(
@@ -47,7 +48,7 @@ class _HomeState extends State<Home> {
           Expanded(
             flex: 3,
             child: Row(
-              //mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+             
               children: [
                 HeightWeight(
                     heightWeight: 'Weight',
