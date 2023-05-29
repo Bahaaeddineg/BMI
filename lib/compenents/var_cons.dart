@@ -3,24 +3,24 @@ import 'package:flutter/material.dart';
 bool isMale = false;
 double age=25;
 double calculate = 0;
-double height = 100;
+double height = 80;
 double weight = 60;
-TextStyle style4 = const TextStyle(
+const TextStyle style4 = TextStyle(
     color: Colors.black,
-    fontSize: 28 ,
+    fontSize: 25 ,
     fontWeight: FontWeight.bold,
     fontFamily: 'Oswald');
-TextStyle style1 = const TextStyle(
+const TextStyle style1 = TextStyle(
     color: Colors.black,
-    fontSize: 36 ,
+    fontSize: 33 ,
     fontWeight: FontWeight.bold,
     fontFamily: 'Oswald');
-TextStyle style2 = const TextStyle(
+const TextStyle style2 = TextStyle(
     color: Colors.white,
-    fontSize: 43,
+    fontSize: 32,
     fontWeight: FontWeight.bold,
     fontFamily: 'Oswald');
-TextStyle style3 = const TextStyle(
+const TextStyle style3 = TextStyle(
     color: Colors.white,
     fontSize: 20,
     fontWeight: FontWeight.bold,

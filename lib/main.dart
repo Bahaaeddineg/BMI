@@ -5,7 +5,7 @@ import 'Widgets/heightweight.dart';
 import 'compenents/components.dart';
 import 'compenents/var_cons.dart';
 
-void main() => runApp(MaterialApp(home: Home()));
+void main() => runApp(MaterialApp(debugShowCheckedModeBanner: false,home: Home()));
 
 class Home extends StatefulWidget {
   @override

@@ -37,7 +37,7 @@ class _HeightWeightState extends State<HeightWeight> {
                   widget.heightWeight,
                   style: style1,
               ),
-              SizedBox(height: 10,),
+              const SizedBox(height: 10,),
               Row(          
                     crossAxisAlignment: CrossAxisAlignment.center,
                     mainAxisAlignment: MainAxisAlignment.center,

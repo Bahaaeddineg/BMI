@@ -9,9 +9,9 @@ class CustomAppBar extends StatelessWidget {
         ),
         centerTitle: true,
         backgroundColor: Colors.green[800],
-        title: Text(
+        title: const Text(
           'BMI',
-          style: style2,
+          style:  style2,
         ),
       );
   }

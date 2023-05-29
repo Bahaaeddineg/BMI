@@ -25,7 +25,6 @@ class Result extends StatefulWidget {
 
   Result({super.key, 
     required this.age,
-    
     required this.result,
   });
 
@@ -37,7 +36,7 @@ class _ResultState extends State<Result> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: PreferredSize(child: CustomAppBar(), preferredSize: Size.fromHeight(60)),
+      appBar: PreferredSize(preferredSize: const Size.fromHeight(60), child: CustomAppBar()),
       body: Column(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
         Center(
           child: Text(
