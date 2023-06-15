@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'package:flutter/material.dart';
 import 'Widgets/ageWidget.dart';
 import 'Widgets/calculate.dart';
@@ -13,10 +14,12 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-  
+  Timer? timerr;
   ////////////////////////////////////////////////////////////////////////////////
-  void increaseWeight() => setState(() => weight++);
+
+  ////////////////////////////////////////////////////////////////////////////////
   void decreaseWeight() => setState(() => weight--);
+  void increaseWeight() => setState(() => weight++);
   void increaseHeight() => setState(() => height++);
   void decreaseHeight() => setState(() => height--);
   ////////////////////////////////////////////////////////////////////////////////
@@ -54,16 +57,22 @@ class _HomeState extends State<Home> {
                     increaseW: increaseWeight,
                     decreaseW: decreaseWeight,
                     decreaseH: decreaseHeight,
-                    increaseH: increaseHeight),
+                    increaseH: increaseHeight,
+                   
+                    ),
                 const SizedBox(
                   width: 10,
                 ),
                 HeightWeight(
+                  
+                  
                     heightWeight: 'Height',
                     increaseW: increaseWeight,
                     decreaseW: decreaseWeight,
                     decreaseH: decreaseHeight,
-                    increaseH: increaseHeight),
+                    increaseH: increaseHeight,
+        
+                    ),
               ],
             ),
           ),
