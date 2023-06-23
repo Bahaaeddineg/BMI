@@ -12,7 +12,6 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
   Timer? timerr;
-  ////////////////////////////////////////////////////////////////////////////////
 
   ////////////////////////////////////////////////////////////////////////////////
   void decreaseWeight() => setState(() => weight--);
@@ -83,11 +82,7 @@ class _HomeState extends State<Home> {
   Expanded MaleFemale(String gender) {
     return Expanded(
       child: GestureDetector(
-        onTap: () {
-          setState(() {
-            isMale = gender == 'Male' ? true : false;
-          });
-        },
+        onTap: () =>setState(() => isMale = gender == 'Male' ? true : false),
         child: Container(
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(20),
@@ -103,7 +98,7 @@ class _HomeState extends State<Home> {
                   size: 70,
                   color: Colors.white,
                 ),
-                Text(gender == 'Male' ? 'Male' : 'Female', style: style1)
+                Text(gender, style: style1)
               ],
             )),
       ),

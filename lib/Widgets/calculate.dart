@@ -15,7 +15,8 @@ class Calculate extends StatelessWidget {
             calculate = weight / (height * height * 0.0001);
             Navigator.of(context).push(PageTransition(
                 child: Result(age: age, result: calculate),
-                type: PageTransitionType.topToBottom,duration: const Duration(milliseconds: 500)));
+                type: PageTransitionType.topToBottom,
+                duration: const Duration(milliseconds: 500)));
           },
           child: Container(
             decoration: BoxDecoration(

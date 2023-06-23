@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import '../compenents/var_cons.dart';
 
 class AgeWidget extends StatefulWidget {
@@ -22,18 +21,14 @@ class _AgeWidgetState extends State<AgeWidget> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Center(child: Text('Age', style: style1)),
+            const Center(child: Text('Age', style: style1)),
             Center(child: Text('${age.toInt()}', style: style2)),
             Slider(
                 activeColor: Colors.green[800],
                 min: 5,
                 max: 100,
                 value: age,
-                onChanged: (newValue) {
-                  setState(() {
-                    age = newValue;
-                  });
-                })
+                onChanged: (newValue) => setState(() => age = newValue))
           ],
         ),
       ),

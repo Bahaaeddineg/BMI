@@ -9,11 +9,9 @@ class HeightWeight extends StatefulWidget {
   VoidCallback decreaseW;
   VoidCallback increaseH;
   VoidCallback decreaseH;
-  
 
   HeightWeight({
     super.key,
-   
     required this.heightWeight,
     required this.increaseW,
     required this.decreaseW,
@@ -29,15 +27,13 @@ class _HeightWeightState extends State<HeightWeight> {
   Timer? timer;
   @override
   void dispose() {
-    timer?.cancel(); 
+    timer?.cancel();
     super.dispose();
   }
 
-   void startTimer(VoidCallback callback) {
+  void startTimer(VoidCallback callback) {
     const duration = Duration(milliseconds: 150);
-    timer = Timer.periodic(duration, (_) {
-      callback();
-    });
+    timer = Timer.periodic(duration, (_) => callback());
   }
 
   @override
@@ -86,12 +82,10 @@ class _HeightWeightState extends State<HeightWeight> {
                       onTap: widget.heightWeight == 'Weight'
                           ? widget.decreaseW
                           : widget.decreaseH,
-                      onLongPress: widget.heightWeight == 'Weight'
-                          ?()=> startTimer(widget.decreaseW)
-                          :()=>startTimer(widget.decreaseH),
-                      onLongPressUp: () {
-                        timer?.cancel();
-                      },
+                      onLongPress: () => widget.heightWeight == 'Weight'
+                          ? startTimer(widget.decreaseW)
+                          : startTimer(widget.decreaseH),
+                      onLongPressUp: () => timer?.cancel(),
                       child: const Icon(
                         Icons.remove,
                         color: Colors.white,
@@ -104,17 +98,15 @@ class _HeightWeightState extends State<HeightWeight> {
                   ),
                   CircleAvatar(
                     backgroundColor: Colors.green[800],
-                    radius:25 ,
+                    radius: 25,
                     child: GestureDetector(
                       onTap: widget.heightWeight == 'Weight'
                           ? widget.increaseW
                           : widget.increaseH,
-                      onLongPress: widget.heightWeight == 'Weight'
-                          ?()=> startTimer(widget.increaseW)
-                          : ()=>startTimer(widget.increaseH),
-                      onLongPressUp: () {
-                        timer?.cancel();
-                      },
+                      onLongPress: () => widget.heightWeight == 'Weight'
+                          ? startTimer(widget.increaseW)
+                          : startTimer(widget.increaseH),
+                      onLongPressUp: () => timer?.cancel(),
                       child: const Icon(
                         Icons.add,
                         color: Colors.white,
